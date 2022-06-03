@@ -20,7 +20,7 @@ int judgement(struct stu *mystu,const int lowscore, const int highscore,int n){
 		}else if(mystu[i].descore>=highscore&&mystu[i].caiscore>=lowscore&&mystu[i].caiscore<highscore){
 			debeicaibubei.push_back(mystu[i]);
 			amount++;
-		}else if(mystu[i].caiscore<highscore&&mystu[i].caiscore<mystu[i].descore&&mystu[i].caiscore>=lowscore&&mystu[i].descore>=lowscore){
+		}else if(mystu[i].caiscore<highscore&&mystu[i].caiscore<=mystu[i].descore&&mystu[i].caiscore>=lowscore&&mystu[i].descore>=lowscore){
 			deshengcai.push_back(mystu[i]);
 			amount++;
 		}else if(mystu[i].descore>=lowscore&&mystu[i].caiscore>=lowscore){
