@@ -31,7 +31,7 @@ int main(){
 		num2 = atoi(n2);
 		num  = num1 - num2;
 		//cout<<setw(4)<<setfill('0')<<num1<<" - "<<setw(4)<<setfill('0')<<num2<<" = "<<num<<endl;
-		//上面这一段改为下面的C语言输出风格之后才完全通过编译，真是搞不懂为什么
+		//上面这一段改为下面的C语言输出风格之后才完全通过在线平台判定，真是搞不懂为什么
 		printf("%04d - %04d = %04d\n",num1,num2,num);
 	}while(num != 6174&& num != 0); 
 	return 0;
