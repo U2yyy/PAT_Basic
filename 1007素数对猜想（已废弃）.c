@@ -1,3 +1,5 @@
+//这段代码由于一个用例运行超时已被废弃
+/*
 #include<stdio.h>
 int whether(int a);
 int main(){
@@ -34,3 +36,4 @@ int whether(int a){
     }
     return rel;
 }
+*/
