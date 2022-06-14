@@ -1,21 +1,17 @@
 #include<iostream>
 #include<cmath>
 #include<vector>
-/*è¿™ä¸ªé¢˜æˆ‘è§‰å¾—å‡ºçš„å¾ˆå±Žï¼Œæ˜¯çš„ï¼Œå¾ˆå±Žï¼Œå› ä¸ºé¢˜ç›®ä¸­çš„nå¹¶æ²¡æœ‰è¯´æ¸…æ¥šæ˜¯ä»€ä¹ˆnï¼Œåšé¢˜è€…å¾ˆå®¹æ˜“
-æƒ³åˆ°è¿™ä¸ªnä¼šä¸ä¼šæ˜¯dné‡Œé¢çš„nï¼Œé‚£ä¹ˆè¿™é‡Œçš„næŒ‡çš„å°±æ˜¯è´¨æ•°ä¸ªæ•°äº†ï¼Œè€Œå¹¶éžæ•°å­—ï¼Œè¿™é‡Œæƒ³é”™äº†ï¼Œ
-åŽé¢å†æ€Žä¹ˆåšéƒ½æ˜¯ç™½æ­ï¼Œç„¶åŽé¢˜ç›®çš„nå…¶å®žå°±æ˜¯æ•°å­—ï¼Œæˆ‘åœ¨è¿™é‡Œå¡äº†åŠå¤©ï¼Œæ— è¯­*/ 
+/*Õâ¸öÌâÎÒ¾õµÃ³öµÄºÜÊº£¬ÊÇµÄ£¬ºÜÊº£¬ÒòÎªÌâÄ¿ÖÐµÄn²¢Ã»ÓÐËµÇå³þÊÇÊ²Ã´n£¬×öÌâÕßºÜÈÝÒ×
+Ïëµ½Õâ¸ön»á²»»áÊÇdnÀïÃæµÄn£¬ÄÇÃ´ÕâÀïµÄnÖ¸µÄ¾ÍÊÇÖÊÊý¸öÊýÁË£¬¶ø²¢·ÇÊý×Ö£¬ÕâÀïÏë´íÁË£¬
+ºóÃæÔÙÔõÃ´×ö¶¼ÊÇ°×´î£¬È»ºóÌâÄ¿µÄnÆäÊµ¾ÍÊÇÊý×Ö£¬ÎÒÔÚÕâÀï¿¨ÁË°ëÌì£¬ÎÞÓï*/ 
 using namespace std;
-<<<<<<< HEAD
 //Ð´Ò»¸ö¼òÒ×µÄÅÐ¶ÏÊÇ·ñÊÇÖÊÊýµÄº¯Êý£¨Î¥·´ÁËµ¥Ò»³ö¿ÚÔ­Ôò£© 
-=======
-//å†™ä¸€ä¸ªç®€æ˜“çš„åˆ¤æ–­æ˜¯å¦æ˜¯è´¨æ•°çš„å‡½æ•°ï¼ˆè¿åäº†å•ä¸€å‡ºå£åŽŸåˆ™ï¼‰ 
->>>>>>> aa7620d7493584310ba5de3f8f45ead024fb90bc
 bool isprime_num(int num){
     if(num == 1)
         return false;
     if(num == 2)
         return true;
-	//è¿™é‡Œç”¨sqrt(num)ä¼šæžå¤§çš„å‡å°‘ç¨‹åºè®¡ç®—é‡ï¼Œä½†æ˜¯è¦æ³¨æ„æ˜¯<=ï¼Œä¸ç„¶4ï¼ˆ4çš„å¹³æ–¹æ˜¯2ï¼Œç›¸å½“äºŽæ²¡è¿›è¡Œå¾ªçŽ¯å°±èµ°äº†ï¼‰ä¹Ÿä¼šè¢«å½“æˆè´¨æ•°åŽ‹å…¥å®¹å™¨ä¸­äº† 
+	//ÕâÀïÓÃsqrt(num)»á¼«´óµÄ¼õÉÙ³ÌÐò¼ÆËãÁ¿£¬µ«ÊÇÒª×¢ÒâÊÇ<=£¬²»È»4£¨4µÄÆ½·½ÊÇ2£¬Ïàµ±ÓÚÃ»½øÐÐÑ­»·¾Í×ßÁË£©Ò²»á±»µ±³ÉÖÊÊýÑ¹ÈëÈÝÆ÷ÖÐÁË 
     for(int i=2;i<=sqrt(num);i++){
         if(num %i == 0)
             return false;
@@ -27,14 +23,14 @@ int main(){
     cin>>n;
     vector<int> prime_num;
     vector<int>::iterator it;
-    //å°†å°äºŽç­‰äºŽè¿™ä¸ªnçš„æ•°ä¸­å±žäºŽè´¨æ•°çš„æ•°éƒ½åŽ‹å…¥å®¹å™¨ä¸­ 
+    //½«Ð¡ÓÚµÈÓÚÕâ¸önµÄÊýÖÐÊôÓÚÖÊÊýµÄÊý¶¼Ñ¹ÈëÈÝÆ÷ÖÐ 
     for(int i=1;i<=n;i++){
         if(isprime_num(i) == true)
             prime_num.push_back(i);
     }
-    //å®šä¹‰cntç”¨æ¥è®¡æ•°ï¼Œå³ä¸¤ä¸ªè´¨æ•°ç›¸å‡ä¸º2æ—¶å°±åŠ ä¸€ 
+    //¶¨ÒåcntÓÃÀ´¼ÆÊý£¬¼´Á½¸öÖÊÊýÏà¼õÎª2Ê±¾Í¼ÓÒ» 
     int cnt = 0;
-    //éåŽ†å®¹å™¨ä¸­çš„æ•°å­—ï¼Œå¹¶åˆ¤æ–­ 
+    //±éÀúÈÝÆ÷ÖÐµÄÊý×Ö£¬²¢ÅÐ¶Ï 
     for(it=prime_num.begin();it!=prime_num.end();it++){
         if(*(it+1)-*it == 2)
             cnt++;
@@ -42,3 +38,4 @@ int main(){
     cout<<cnt;
     return 0;
 }
+
