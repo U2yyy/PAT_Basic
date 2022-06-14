@@ -1,3 +1,5 @@
+//这是一段已经被废弃的代码
+/*
 #include<stdio.h>
 typedef struct student{
     char name[10];
@@ -66,3 +68,4 @@ int main(){
 
     return 0;
 }
+*/
