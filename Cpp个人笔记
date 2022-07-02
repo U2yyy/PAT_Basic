@@ -1,0 +1,62 @@
+C++中对比C多了一个传址函数
+函数可以定义为 void fun（&a）{};
+用这个函数的时候只用写成 fun（a）即可，不用再加取址符，已经默认传址
+
+普通函数getline()
+函数语法结构：
+
+在< string >中的getline函数有四种重载形式：
+
+istream& getline (istream& is, string& str, char delim);
+istream& getline (istream&& is, string& str, char delim);
+istream& getline (istream& is, string& str);
+istream& getline (istream&& is, string& str);
+函数的变量：
+
+is ：表示一个输入流，例如 cin。
+str ：string类型的引用，用来存储输入流中的流信息。
+delim ：char类型的变量，所设置的截断字符；在不自定义设置的情况下，遇到'\n'，则终止输入
+
+用法和上一种类似，但是读取的istream是作为参数is传进函数的。读取的字符串保存在string类型的str中
+
+输入流成员函数getline()
+函数语法结构：
+
+在< istream >中的getline()函数有两种重载形式：
+
+1
+2
+istream& getline (char* s, streamsize n );
+istream& getline (char* s, streamsize n, char delim );
+作用是： 从istream中读取至多n个字符(包含结束标记符)保存在s对应的数组中。即使还没读够n个字符，
+如果遇到delim 或 字数达到限制，则读取终止，delim都不会被保存进s对应的数组中。
+
+使用STL的string的 find 和 erase来删除指定字符或子串：
+首先，通过find找到需要删除的字符/字符串的位置：
+
+string str;
+
+string target;
+
+int pos = str.find(target);
+
+然后通过erase进行删除：
+
+n = target.size();
+
+str = str.erase(pos,n); //从pos这个位置开始，删除n个字符
+
+对string字符串进行插入和删除字符操作
+函数原型：
+
+string& insert(int pos, const char* s); //插入字符串
+string& insert(int pos, const string& str); //插入字符串
+string& insert(int pos, int n, char c); //在指定位置插入n个字符c
+string& erase(int pos, int n = npos); //删除从Pos开始的n个字符
+
+类 basic_string 的成员函数 compare() 的原型如下：
+int compare (const basic_string& s) const;
+int compare (const Ch* p) const;
+int compare (size_type pos, size_type n, const basic_string& s) const;
+int compare (size_type pos, size_type n, const basic_string& s,size_type pos2, size_type n2) const;
+int compare (size_type pos, size_type n, const Ch* p, size_type = npos) const;
