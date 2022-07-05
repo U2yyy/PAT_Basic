@@ -46,7 +46,7 @@ int main(){
 		back.Sickle += 17;
 		back.Galleon -= 1;
 	}
-	//需要给负值加上负号 
+	//需要给负值加上负号  
 	if(!isBigger(A,P))
 		cout<<"-";
 	cout<<back.Galleon<<"."<<back.Sickle<<"."<<back.Knut;
