@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<string>
 #include<algorithm>
 using namespace std;
 class stu{
@@ -28,11 +29,55 @@ int main(){
 	sort(it,it+sortedStu.size(),cmp);
 	int j = 0;
 	for(int i=0;i<row;i++){
-		int middle = row/2+1;
-		char row[n/row+n%row][99] = {0};
-		row [middle] = sortedStu[j++];
-		//分为左右，便于存入字符数组中 
-		int right = middle+1;
-		int left = middle-1;
+		if(i==0){
+			int numofRow = n/row+n%row;
+			int middle = numofRow/2+1;
+			string myrow[numofRow];
+			myrow[middle-1]= sortedStu[j++].name;
+			//分为左右，便于存入字符数组中 
+			int right = middle;
+			int left = middle-2;
+			while(left!=-1||right!=numofRow){
+				if(left>=0){
+					myrow[left--] = sortedStu[j++].name;
+				}
+				if(right<numofRow){
+					myrow[right++] = sortedStu[j++].name;
+				}
+			}
+			if(left==-1&&right==numofRow){
+				for(int k=0;k<numofRow;k++){
+					cout<<myrow[k];
+					if(k!=numofRow-1)
+						cout<<" ";
+				}
+				cout<<endl;
+			}
+		}else{
+			int numofRow = n/row;
+			int middle = numofRow/2+1;
+			string myrow[numofRow];
+			myrow[middle-1]= sortedStu[j++].name;
+			//分为左右，便于存入字符数组中 
+			int right = middle;
+			int left = middle-2;
+			while(left!=-1||right!=numofRow){
+				if(left>=0){
+					myrow[left--] = sortedStu[j++].name;
+				}
+				if(right<numofRow){
+					myrow[right++] = sortedStu[j++].name;
+				}
+			}
+			if(left==-1&&right==numofRow){
+				for(int k=0;k<numofRow;k++){
+					cout<<myrow[k];
+					if(k!=numofRow-1)
+						cout<<" ";
+				}
+				cout<<endl;
+			}
+		}
 	}
+	return 0;
 }
